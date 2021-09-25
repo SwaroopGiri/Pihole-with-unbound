@@ -6,6 +6,7 @@
 **Additional Information**
 
 This tutorial assumes that you have a raspberry pi setup with rasberry pi OS and Pi-hole cofigured on it.
+
 Follow [this](https://github.com/SwaroopGiri/Pi_hole_configuration) tutorial if you haven't already configured Pi-hole.
 
 ### Setting up Pi-hole as a recursive DNS server solution
@@ -198,7 +199,8 @@ The second should give `NOERROR` plus an IP address.
 ### Configure Pi-hole
 Configure Pi-hole to use unbound as your recursive DNS server:
 
-Login to Pi-hole interface, Goto settings --> DNS --> Check custom 1 IPv4 and Type the unbound listening IP (127.0.0.1#5335)
+Login to Pi-hole interface, Goto settings --> DNS --> Select Custom 1 (IPv4) and Type the unbound listening IP `127.0.0.1#5335` below it.
+
 Uncheck everything else in Upstream DNS Servers section.
 
 Make sure Never forward reverse lookups for private IP ranges and Never forward non-FQDNs is checked in Advanced DNS section.
