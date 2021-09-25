@@ -4,6 +4,7 @@
 [Unbound](https://www.nlnetlabs.nl/projects/unbound/about/) is a validating, recursive, caching DNS resolver developed by NLnet Labs, VeriSign Inc., Nominet, and Kirei.
 
 **Additional Information**
+
 This tutorial assumes that you have a raspberry pi setup with rasberry pi OS and Pi-hole cofigured on it.
 Follow [this](https://github.com/SwaroopGiri/Pi_hole_configuration) tutorial if you haven't already configured Pi-hole.
 
@@ -200,16 +201,16 @@ Configure Pi-hole to use unbound as your recursive DNS server:
 Login to Pi-hole interface, Goto settings --> DNS --> Check custom 1 IPv4 and Type the unbound listening IP (127.0.0.1#5335)
 Uncheck everything else in Upstream DNS Servers section.
 
-Make sure `Never forward reverse lookups for private IP ranges` and `Never forward non-FQDNs` is checked in Advanced DNS section.
+Make sure Never forward reverse lookups for private IP ranges and Never forward non-FQDNs is checked in Advanced DNS section.
 Uncheck use DNSSEC option since unbound does that for us.
 
-Only check `Listen on all interfaces, permit all origins` in Interface listening behavior if you're planning to setup a VPN server. For all other connections in local network, `Listen on all interfaces` should suffice.
+Only check Listen on all interfaces, permit all origins in Interface listening behavior if you're planning to setup a VPN server. For all other connections in local network, Listen on all interfaces should suffice.
 
 Click save.
 
 ### Troubleshooting
 
-Check if unbound is working without errors by following command.
+Check if unbound is working without any errors by following command.
 
 `sudo service unbound status`
 
@@ -220,8 +221,11 @@ If it throws anchor not OK error, restart unbound service by following command.
 If unbound is still failing to start/trying to listen to port #53 which should be reserved for Pi-hole. Check is config file is appropriately configured by following command and give pi a reboot.
 
 `cat /etc/unbound/unbound.conf.d/pi-hole.conf`
+
 to edit conf file: 
+
 `sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf`
+
 to save: 
 press Ctrl+X --> Y --> Enter
 
