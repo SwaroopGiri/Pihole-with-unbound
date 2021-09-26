@@ -2,7 +2,7 @@
 ***
 **Important Information**
 
-This tutorial assumes that you have a Raspberry Pi setup with Rasberry Pi OS and Pi-hole cofigured on it.
+This tutorial assumes that you have a Raspberry Pi setup with Rasberry Pi OS and Pi-hole cofigured on it. If you don't know what it is, [hop here](https://github.com/SwaroopGiri/Pi_hole_configuration) to know how to set it up.
 ***
 ### What is unbound?
 [Unbound](https://www.nlnetlabs.nl/projects/unbound/about/) is a validating, recursive, caching DNS resolver developed by NLnet Labs, VeriSign Inc., Nominet, and Kirei.
