@@ -7,8 +7,6 @@ This tutorial assumes that you have a Raspberry Pi setup with Rasberry Pi OS and
 ### What is unbound?
 [Unbound](https://www.nlnetlabs.nl/projects/unbound/about/) is a validating, recursive, caching DNS resolver developed by NLnet Labs, VeriSign Inc., Nominet, and Kirei.
 
-Follow [this](https://github.com/SwaroopGiri/Pi_hole_configuration) tutorial if you haven't already configured Pi-hole.
-
 ### Setting up Pi-hole as a recursive DNS server solution
 
 Install Unbound recursive DNS resolver:
@@ -20,7 +18,7 @@ For recursively querying a host that is not cached as an address, the resolver n
 wget -O root.hints https://www.internic.net/domain/named.root
 sudo mv root.hints /var/lib/unbound/
 ```
-### Configure `unbound`
+### Configure Unbound
 
 Create and edit the config file  
 `sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf`
