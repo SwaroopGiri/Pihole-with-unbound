@@ -21,7 +21,9 @@ sudo mv root.hints /var/lib/unbound/
 ### Configure Unbound
 
 Create and edit the config file  
-`sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf`
+```
+sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+```
 
 Add the folowing contents:
 
@@ -181,9 +183,17 @@ to save conf file:
 press Ctrl+X --> Y --> Enter
 
 ### Check unbound config file for errors
-This is optional. Check the config file for errors by `unbound-checkconf  /etc/unbound/unbound.conf.d/pi-hole.conf` it should return `no errors in in /etc/unbound/unbound.conf.d/pi-hole.conf`. 
+This is optional. Check the config file for errors by 
+```
+unbound-checkconf  /etc/unbound/unbound.conf.d/pi-hole.conf
+```
+it should return `no errors in /etc/unbound/unbound.conf.d/pi-hole.conf`. 
 
-Start unbound service and check whether the domain is resolving. The first few queries will be slow but the subsequent queries will resolve under 1ms.
+Start unbound service and check whether the domain is resolving by using following command.
+```
+dig pi-hole.net @127.0.0.1 -p 5335
+```
+The first few queries will be slow but the subsequent queries will resolve under 1ms.
 
 ### Test validation
 You can test DNSSEC validation using
@@ -212,22 +222,32 @@ Click save.
 
 Check if unbound is working without any errors by following command.
 
-`sudo service unbound status`
+```
+sudo service unbound status
+```
 
 If it throws anchor not OK error, restart unbound service by following command.
 
-`sudo service unbound restart`
+```
+sudo service unbound restart
+```
 
 If unbound is still failing to start/trying to listen to port #53 which should be reserved for Pi-hole. Check if config file is appropriately configured by following command and give pi a reboot.
 
-`cat /etc/unbound/unbound.conf.d/pi-hole.conf`
+```
+cat /etc/unbound/unbound.conf.d/pi-hole.conf
+```
 
 to edit conf file: 
 
-`sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf`
+```
+sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+```
 
-to save: 
+To save: 
 press Ctrl+X --> Y --> Enter
 
-To reboot pi:
-`sudo reboot`
+To restart pi:
+```
+sudo reboot
+```
