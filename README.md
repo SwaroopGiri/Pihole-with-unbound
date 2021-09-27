@@ -212,7 +212,7 @@ Login to Pi-hole interface, Goto settings --> DNS --> Select Custom 1 (IPv4) and
 Uncheck everything else in Upstream DNS Servers section.
 
 Make sure Never forward reverse lookups for private IP ranges and Never forward non-FQDNs is checked in Advanced DNS section.
-Uncheck use DNSSEC option since unbound does that for us.
+Uncheck use DNSSEC option in pi-hole since unbound does that for us.
 
 Only check Listen on all interfaces, permit all origins in Interface listening behavior if you're planning to setup a VPN server. For all other connections in local network, Listen on all interfaces should suffice.
 
