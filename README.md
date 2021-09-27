@@ -218,7 +218,7 @@ If it throws anchor not OK error, restart unbound service by following command.
 
 `sudo service unbound restart`
 
-If unbound is still failing to start/trying to listen to port #53 which should be reserved for Pi-hole. Check is config file is appropriately configured by following command and give pi a reboot.
+If unbound is still failing to start/trying to listen to port #53 which should be reserved for Pi-hole. Check if config file is appropriately configured by following command and give pi a reboot.
 
 `cat /etc/unbound/unbound.conf.d/pi-hole.conf`
 
