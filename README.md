@@ -189,7 +189,12 @@ unbound-checkconf  /etc/unbound/unbound.conf.d/pi-hole.conf
 ```
 it should return `no errors in /etc/unbound/unbound.conf.d/pi-hole.conf`. 
 
-Start unbound service and check whether the domain is resolving by using following command.
+Start unbound service
+```
+sudo service unbound start
+```
+
+check whether the domain is resolving by using following command.
 ```
 dig pi-hole.net @127.0.0.1 -p 5335
 ```
